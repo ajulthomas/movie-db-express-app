@@ -1,0 +1,15 @@
+{
+  "name": "movie-db-app",
+  "version": "1.0.0",
+  "description": "Express app to which allows you to add, view, delete and update info about movie and tv shows.",
+  "main": "./src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ajulthomas",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  }
+}
