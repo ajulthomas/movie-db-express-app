@@ -1,2 +1,2 @@
 node_modules
-/src/config/environment/movie_db.confidential.txt
+/src/config/environment/movie_db.dev.confidential.txt

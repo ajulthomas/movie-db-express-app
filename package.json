@@ -4,6 +4,7 @@
   "description": "Express app to which allows you to add, view, delete and update info about movie and tv shows.",
   "main": "./src/app.js",
   "scripts": {
+    "start": "nodemon ./src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "ajulthomas",

@@ -1,11 +1,13 @@
 const express = require("express");
+const {
+  getMovies,
+  getMovieById,
+  addMovie,
+} = require("./../../controllers/movies.controller");
+
 const router = express.Router();
 
-router.route("/").get((req, res, next) => {
-  res.json({
-    id: "01",
-    name: "Fight Club",
-  });
-});
+router.route("/").get(getMovies).post(addMovie);
+router.get("/:id", getMovieById);
 
 module.exports = router;

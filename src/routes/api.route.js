@@ -5,8 +5,8 @@ const tvShows = require("./v1/tvshows.route");
 
 const router = express.Router();
 
-router.use("/v1/auth", auth);
-router.use("/v1/movies", movies);
-router.use("/v1/tvShows", tvShows);
+router.use("/auth", auth);
+router.use("/movies", movies);
+router.use("/tvShows", tvShows);
 
 module.exports = router;

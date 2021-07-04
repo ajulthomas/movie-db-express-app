@@ -11,7 +11,7 @@ app.use(morgan("dev"));
 app.use(express.static(__dirname + "\\view"));
 
 // api routes
-app.use("/api", api);
+app.use("/api/v1", api);
 
 // starts the server
 app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
