@@ -1,7 +1,12 @@
 const { Pool } = require("pg");
+const movie_db_password = require("./../config/environment/environment.dev");
 
-const CONNECTION_STRING = require("./../config/movie-db.config");
-
-const pool = new Pool({ CONNECTION_STRING });
+const pool = new Pool({
+  user: "dkhvhkib",
+  host: "john.db.elephantsql.com",
+  database: "dkhvhkib",
+  password: movie_db_password,
+  port: 5432,
+});
 
 module.exports = pool;

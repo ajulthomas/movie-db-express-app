@@ -5,9 +5,9 @@ const fetchMovies = async () => {
     const movies = await movieDB.query(
       "SELECT movie_id, movie_name, certification, imdb_rating, release_date, poster_path, synopsis FROM movies"
     );
-    return movies;
+    return movies.rows;
   } catch (error) {
-    console.error(error);
+    console.error("error while querying:", error);
   }
 };
 
