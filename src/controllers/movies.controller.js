@@ -13,29 +13,40 @@ const getMovieById = (req, res) => {
   console.log(req);
 };
 
-const addMovie = (req, res) => {
-  console.log(req);
-  // validate the request
-
-  //extract values from request and pass on to service
-  const values = [
-    "Fight Club",
-    "R",
-    8.8,
-    "1999-10-15",
-    "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg",
-    'A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground "fight clubs" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.',
-    1,
-    CURRENT_TIMESTAMP,
-  ];
-  movieService.addMovie(values).then((resp) => {
-    console.log(resp);
-    res.json(resp);
-  });
+const addMovies = (req, res) => {
+  try {
+    const reqBody = req.body;
+    console.log(reqBody);
+    // validate the request
+    if (reqBody.userId && reqBody.movies && reqBody.movies.length > 0) {
+      const movies = reqBody.movies;
+      let value = [];
+      movies.forEach((movie) => {
+        let data = [
+          movie_name,
+          certification,
+          imdb_rating,
+          release_date,
+          poster_path,
+          synopsis,
+          updated_by,
+          last_updated,
+        ];
+      });
+      res.json({
+        status: "success",
+      });
+    } else {
+      throw new Error("BAD REQUEST");
+    }
+    //extract values from request and pass on to service
+  } catch (error) {
+    console.error("Error while processing request : ", error);
+  }
 };
 
 module.exports = {
   getMovies,
   getMovieById,
-  addMovie,
+  addMovies,
 };
